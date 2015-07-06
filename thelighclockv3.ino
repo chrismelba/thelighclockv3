@@ -16,7 +16,7 @@ RTC_DS1307 rtc;
 DateTime now;
 
 
-CHSV Hour_Colour(60,255,255);
+CHSV Hour_Colour(40,255,255);
 CHSV Minute_Colour(160,255,255);
 CHSV Second_Colour(0, 0, 255);
 
@@ -64,7 +64,7 @@ void setup() {
 
     //lower brightness for low voltage applications, like when powering off computer USB to test code. ENSURE YOU REMOVE THIS LINE PRIOR TO FINAL BUILD
     
-   FastLED.setBrightness(15);   
+   //FastLED.setBrightness(15);   
 
     if (! rtc.isrunning()) {
     	Serial.println("RTC is NOT running!");
@@ -364,7 +364,7 @@ void epiphanyface(uint16_t hour_pos, uint16_t min_pos) {
       CHSV c2;
       CHSV c2blend;
       int gap;
-      int blendpoint = 160;
+      int blendpoint = 120;
       int firsthand = min(hour_pos, min_pos);
       int secondhand = max(hour_pos, min_pos);
     //check which hand is first, so we know what colour the 0 pixel is
