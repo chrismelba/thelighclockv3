@@ -2,7 +2,7 @@
 #include "RTClib.h" 
 #include <avr/power.h>
 #include <FastLED.h>
-#include <Time.h>
+//#include <Time.h>
 
 
 #define PIXEL_PIN 6  //the pin that attaches to the neopixel strip
@@ -177,8 +177,8 @@ Serial.println(now.hour());
   //FastLED.delay(10);
   checkbuttons();
   //update the internal time.
- 	//now = rtc.now();
-  now.adjustTime(1);
+ 	now = rtc.now();
+  //now.adjustTime(1);
 
 }
 
@@ -364,7 +364,7 @@ void epiphanyface(uint16_t hour_pos, uint16_t min_pos) {
       CHSV c2;
       CHSV c2blend;
       int gap;
-      int blendpoint = 100;
+      int blendpoint = 160;
       int firsthand = min(hour_pos, min_pos);
       int secondhand = max(hour_pos, min_pos);
     //check which hand is first, so we know what colour the 0 pixel is
